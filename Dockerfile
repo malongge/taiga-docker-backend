@@ -2,10 +2,10 @@ FROM python:3.5-onbuild
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN /bin/bash -c "apt-get update &&
-                  apt-get install locales unzip -y &&
-                  wget -q https://github.com/taigaio/taiga-back/archive/master.zip -O master.zip &&
-                  unzip master.zip &&
+RUN /bin/bash -c "apt-get update && \
+                  apt-get install locales unzip -y && \
+                  wget -q https://github.com/taigaio/taiga-back/archive/master.zip -O master.zip && \
+                  unzip master.zip && \
                   mv taiga-back-master /taiga"
 
 COPY docker-settings.py /taiga/settings/local.py
