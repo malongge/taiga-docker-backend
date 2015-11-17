@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN /bin/bash -c "apt-get update && \
                   apt-get install locales unzip -y && \
+                  apt-get clean && \
                   wget -q https://github.com/taigaio/taiga-back/archive/master.zip -O master.zip && \
                   unzip master.zip && \
                   mv taiga-back-master /taiga"
